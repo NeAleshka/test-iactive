@@ -20,15 +20,15 @@ function App() {
     const postsSort = () => {
         setPosts([...posts].reverse())
     }
-    /*    useEffect(()=>{
+        useEffect(()=>{
           const intervalId=setInterval(()=>{
-             localStorage.setItem('lastPostId',JSON.stringify(postsData?.posts.at(-1)?.id))
+             localStorage.setItem('lastPostId',JSON.stringify(posts.at(-1)?.id))
               getPosts(lastPostId)
           },5000)
             return ()=>{
               clearInterval(intervalId)
             }
-        },[getPosts])*/
+        },[getPosts])
 
     return (
         <div className={'mx-auto w-fit p-[30px] max-w-full'}>
