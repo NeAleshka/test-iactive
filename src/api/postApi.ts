@@ -9,7 +9,7 @@ export const postsApi = createApi({
             query: (messageId) => {
                 const formData = new FormData();
                 formData.append('actionName', 'MessagesLoad');
-                formData.append('messageId', messageId.toString());
+                formData.append('messageId', messageId);
                 return {
                     url: '/',
                     method: 'POST',
@@ -18,7 +18,7 @@ export const postsApi = createApi({
             },
             transformResponse:(res:IResponse)=> {
                 return{
-                    posts:[...res.Messages]
+                    posts:res.Messages ? [ ...res.Messages]:[]
                 }
             },
         }),

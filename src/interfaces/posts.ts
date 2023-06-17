@@ -8,7 +8,7 @@ export interface IResponsePost{
     author: string
     content: string
     channel: string
-    id: string
+    id: number
     date: string
     attachments: Attachment[]
     senderNumber: string

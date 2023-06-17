@@ -21,17 +21,17 @@ export default Post;
 
 
 const PostHeader = (props: Partial<IResponsePost>) => {
-    const {author,id=''} = props
+    const {author,id} = props
     const {addToFavorites,removeToFavorites}=useActions()
     const favoritesPosts=useAppSelector(state => state.posts.favoritesPostsID)
     const [isFavorite, setIsFavorite] = useState(Boolean(favoritesPosts.find(postId=>postId===id)))
     const addPostToFavorites=()=>{
         setIsFavorite(true)
-        addToFavorites(id)
+        id && addToFavorites(id)
     }
     const removePostFromFavorites=()=>{
         setIsFavorite(false)
-        removeToFavorites(id)
+        id && removeToFavorites(id)
     }
     return (
         <div className={'w-full h-fit flex justify-between mb-[8px] flex-col-reverse sm:flex-row sm:h-[37px]'}>
